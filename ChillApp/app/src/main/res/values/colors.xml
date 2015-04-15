@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Color swatches for use throughout app.  -->
+
+    <!--               #AARRGGBB     -->
+    <color name="swatches_yellow_050">#AAFFFDE7</color>
+    <color name="swatches_yellow_100">#AAFFF9C4</color>
+    <color name="swatches_yellow_200">#AAFFF59D</color>
+    <color name="swatches_yellow_300">#AAFFF716</color>
+    <color name="swatches_yellow_400">#AAFFEE58</color>
+    <color name="swatches_yellow_500">#AAFFEB3B</color>
+    <color name="swatches_yellow_600">#AAFDD835</color>
+    <color name="swatches_yellow_700">#AAFBC02D</color>
+    <color name="swatches_yellow_800">#AAF9A825</color>
+    <color name="swatches_yellow_900">#AAF57F17</color>
+    <color name="swatches_yellow_A100">#AAFFFF8D</color>
+    <color name="swatches_yellow_A200">#AAFFFF00</color>
+    <color name="swatches_yellow_A400">#AAFFEA00</color>
+    <color name="swatches_yellow_A700">#AAFFD600</color>
+    <color name="pure_black">#FF000000</color>
+    <color name="pure_white">#FFFFFFFF</color>
+
+    <!-- Aliases for swatch / 'base' color scheme. -->
+    <color name="base_actionbar">@color/swatches_yellow_800</color>
+    <color name="base_highlight">@color/swatches_yellow_700</color>
+    <color name="base_border">@color/swatches_yellow_800</color>
+    <color name="base_title">@color/swatches_yellow_600</color>
+    <color name="base_text">@color/pure_white</color>
+    <color name="base_item">@color/pure_white</color>
+    <color name="base_view"></color>
+
+</resources>
