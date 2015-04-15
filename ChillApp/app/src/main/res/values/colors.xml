@@ -28,6 +28,6 @@
     <color name="base_title">@color/swatches_yellow_600</color>
     <color name="base_text">@color/pure_white</color>
     <color name="base_item">@color/pure_white</color>
-    <color name="base_view"></color>
+    <color name="base_view">@color/swatches_yellow_050</color>
 
 </resources>
