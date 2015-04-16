@@ -31,6 +31,8 @@ public class GCMNotification extends HttpServlet {
 	static final String REGISTER_NAME = "name";
 	static final String MESSAGE_ACTIVITY = "activity";
         static final String MESSAGE_PLACE = "place";
+        static final String DATE = "date";
+        static final String TIME = "time";
 	static final String TO_NAME = "toName";
 	static final String REG_ID_STORE = "GCMRegId.txt";
 
@@ -65,11 +67,15 @@ public class GCMNotification extends HttpServlet {
 				String toName = request.getParameter(TO_NAME);
 				String userActivity = request.getParameter(MESSAGE_ACTIVITY);
                                 String userPlace = request.getParameter(MESSAGE_PLACE);
+                                String userDate = request.getParameter(DATE);
+                                String userTime = request.getParameter(TIME);
 				Sender sender = new Sender(GOOGLE_SERVER_KEY);
 				Message message = new Message.Builder().timeToLive(30)
 						.delayWhileIdle(true).addData(MESSAGE_ACTIVITY, userActivity)
                                                 .addData(MESSAGE_PLACE, userPlace)
-						.addData(REGISTER_NAME, fromName).build();
+						.addData(REGISTER_NAME, fromName)
+                                                .addData(DATE, userDate)
+                                                .addData(TIME, userTime).build();
 				Map<String, String> regIdMap = readFromFile();
 				String regId = regIdMap.get(toName);
 				Result result = sender.send(message, regId, 1);
