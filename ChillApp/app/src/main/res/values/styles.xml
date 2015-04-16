@@ -1,8 +1,31 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="ChillApp" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/swatches_yellow_A700</item>
+        <item name="android:background">@color/pure_white</item>
+        <item name="android:actionBarStyle">@style/ChillApp_ActionBar</item>
+        <item name="android:listViewStyle">@style/ChillApp_ListView</item>
     </style>
 
+    <!-- All other styles are for individual views. Basic naming is "ChillApp_[viewname]". -->
+
+    <style name="ChillApp_ActionBar" parent="ChillApp">
+        <item name="android:textColor">@color/base_text</item>
+        <item name="android:background">@color/base_actionbar</item>
+        <item name="android:backgroundSplit">@color/swatches_yellow_700</item>
+        <item name="android:backgroundStacked">@color/swatches_yellow_700</item>
+    </style>
+
+    <style name="ChillApp_ListView" parent="ChillApp">
+        <item name="android:textColor">@color/swatches_yellow_A700</item>
+        <item name="android:background">@color/pure_white</item>
+        <item name="android:divider">@color/swatches_yellow_A700</item>
+    </style>
+
+    <style name="ChillApp_TabView" parent="ChillApp_ListView">
+        <!-- full inheritance, alias for logical reference. -->
+        <item name="android:backgroundSplit">@color/swatches_yellow_700</item>
+        <item name="android:backgroundStacked">@color/swatches_yellow_700</item>
+    </style>
 </resources>
