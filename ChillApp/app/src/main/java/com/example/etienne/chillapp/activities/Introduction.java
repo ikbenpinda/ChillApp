@@ -35,7 +35,7 @@ public class Introduction extends FragmentActivity implements Introduction_1.OnF
 
         // Add introduction panels.
         ArrayList<Fragment>fragments = new ArrayList<>();
-        fragments.add(Introduction_1.newInstance("hello","world"));
+        fragments.add(Introduction_1.newInstance("hello", "world"));
         fragments.add(Introduction_2.newInstance("hello", "world"));
         fragments.add(Introduction_3.newInstance("hello", "world"));
         // Set adapter.

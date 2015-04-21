@@ -57,17 +57,11 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         pager.setAdapter(pageAdapter);
         FacebookSdk.sdkInitialize(getApplicationContext());
 
-        if (true){// TODO change this.
+        if (getPreferences(0).getBoolean("FirstUse", true)){
             Intent introductions = new Intent(getBaseContext(), Introduction.class);
             introductions.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             getBaseContext().startActivity(introductions);
-        }
-    }
-
-    private void checkFirstUse() {
-        if (true){// TODO change this.
-            Intent introductions = new Intent(getBaseContext(), Introduction.class);
-            getBaseContext().startActivity(introductions);
+            getPreferences(0).edit().putBoolean("FirstUse", false).commit();
         }
     }
 
