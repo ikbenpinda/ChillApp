@@ -12,7 +12,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Vector;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.PagerTabStrip;
@@ -34,6 +36,7 @@ import android.widget.TextView;
 
 import com.example.etienne.chillapp.R;
 import com.example.etienne.chillapp.fragments.Home;
+import com.facebook.FacebookSdk;
 
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener{
@@ -47,10 +50,25 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         tabstrip = new PagerTabStrip(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         List<Fragment> fragments = getFragments();
         pageAdapter = new MyPageAdapter(getSupportFragmentManager(), fragments);
         pager = (ViewPager) findViewById(R.id.viewpager);
         pager.setAdapter(pageAdapter);
+        FacebookSdk.sdkInitialize(getApplicationContext());
+
+        if (true){// TODO change this.
+            Intent introductions = new Intent(getBaseContext(), Introduction.class);
+            introductions.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getBaseContext().startActivity(introductions);
+        }
+    }
+
+    private void checkFirstUse() {
+        if (true){// TODO change this.
+            Intent introductions = new Intent(getBaseContext(), Introduction.class);
+            getBaseContext().startActivity(introductions);
+        }
     }
 
     @Override
