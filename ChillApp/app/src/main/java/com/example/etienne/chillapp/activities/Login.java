@@ -4,7 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import com.facebook.FacebookSdk; // Keytool: http://stackoverflow.com/questions/5488339/how-can-i-find-and-run-the-keytool
+import com.facebook.login.widget.LoginButton;
 import com.example.etienne.chillapp.R;
 
 public class Login extends ActionBarActivity {
