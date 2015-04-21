@@ -24,11 +24,11 @@ public class Home extends Fragment {
 
         public static final Home newInstance(String message)
         {
-            Home f = new Home();
+            Home fragment = new Home();
             Bundle bdl = new Bundle(1);
             bdl.putString(EXTRA_MESSAGE, message);
-            f.setArguments(bdl);
-            return f;
+            fragment.setArguments(bdl);
+            return fragment;
         }
 
         public Home(){

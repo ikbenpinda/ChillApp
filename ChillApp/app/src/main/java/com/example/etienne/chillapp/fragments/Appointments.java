@@ -3,7 +3,7 @@ package com.example.etienne.chillapp.fragments;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,12 +40,11 @@ public class Appointments extends Fragment {
      * @return A new instance of fragment Appointments.
      */
     // TODO: Rename and change types and number of parameters
-    public static Appointments newInstance(String param1, String param2) {
+    public static Appointments newInstance(String message) {
         Appointments fragment = new Appointments();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+        Bundle bundle = new Bundle(1);
+        bundle.putString("", message);
+        fragment.setArguments(bundle);
         return fragment;
     }
 

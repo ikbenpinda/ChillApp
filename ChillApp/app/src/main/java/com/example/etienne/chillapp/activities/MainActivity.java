@@ -15,6 +15,7 @@ import java.util.Vector;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.PagerTabStrip;
@@ -35,11 +36,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.etienne.chillapp.R;
+import com.example.etienne.chillapp.fragments.Appointments;
 import com.example.etienne.chillapp.fragments.Home;
+import com.example.etienne.chillapp.fragments.Suggestions;
 import com.facebook.FacebookSdk;
+import com.google.android.gms.nearby.Nearby;
 
 
-public class MainActivity extends FragmentActivity implements ActionBar.TabListener{
+public class MainActivity extends FragmentActivity implements ActionBar.TabListener, Appointments.OnFragmentInteractionListener, Suggestions.OnFragmentInteractionListener{
     MyPageAdapter pageAdapter;
     ViewPager pager;
     ActionBar actionbar;
@@ -77,6 +81,11 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
     @Override
     public void onTabReselected(ActionBar.Tab tab, android.app.FragmentTransaction fragmentTransaction) {
+
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
     }
 
@@ -123,11 +132,15 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
     }
 
+    /**
+     *
+     * @return
+     */
     private List<Fragment> getFragments() {
         List<Fragment> fList = new ArrayList<Fragment>();
-        Fragment f1 = Home.newInstance("asdfghjkl");
+        Fragment f1 = Appointments.newInstance("asdfghjkl");
         Fragment f2 = Home.newInstance("qwertyuiop");
-        Fragment f3 = Home.newInstance("zxcvbnm");
+        Fragment f3 = Suggestions.newInstance("zxcvbnm");
         fList.add(f1);
         fList.add(f2);
         fList.add(f3);
