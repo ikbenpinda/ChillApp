@@ -11,8 +11,9 @@ import com.example.etienne.chillapp.R;
 public class Login extends ActionBarActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(this);
         setContentView(R.layout.activity_login);
     }
 

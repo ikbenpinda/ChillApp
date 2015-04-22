@@ -1,12 +1,16 @@
 package com.example.etienne.chillapp.fragments;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.etienne.chillapp.R;
 
@@ -20,6 +24,9 @@ import com.example.etienne.chillapp.R;
  * create an instance of this fragment.
  */
 public class Appointments extends Fragment {
+
+    ListView lv;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -43,7 +50,7 @@ public class Appointments extends Fragment {
     public static Appointments newInstance(String message) {
         Appointments fragment = new Appointments();
         Bundle bundle = new Bundle(1);
-        bundle.putString("", message);
+        bundle.putString("title", message);
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -54,6 +61,15 @@ public class Appointments extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        lv = (ListView)getActivity().findViewById(R.id.lv_appointments);
+        /*lv.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View view, int position, long arg3) {
+
+                Intent i = new Intent(view.getContext(), AppointmentDetail.class);
+                startActivity(i);
+            }
+        });*/
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -64,8 +80,12 @@ public class Appointments extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_appointments, container, false);
+        String message = getArguments().getString(ARG_PARAM1);
+        View v = inflater.inflate(R.layout.fragment_appointments, container, false);
+        //TextView messageTextView = (TextView)v.findViewById(R.id.textView);
+        //messageTextView.setText(message);
+
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -1,18 +1,32 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="ChillApp" parent="android:Theme.Holo">
+    <style name="ChillApp" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="android:textColor">@color/swatches_yellow_A700</item>
+        <item name="android:background">@color/pure_white</item>
         <item name="android:actionBarStyle">@style/ChillApp_ActionBar</item>
         <item name="android:listViewStyle">@style/ChillApp_ListView</item>
+        <item name="android:windowTitleBackgroundStyle">@style/ChillApp_titleTextStyle</item>
     </style>
 
     <!-- These styles are for individual views. Basic naming is "ChillApp_[viewname]". -->
     <style name="ChillApp_ActionBar" parent="android:Widget.ActionBar">
-        <item name="android:textColor">@color/base_text</item>
+        <item name="android:windowBackground">@color/pure_black</item>
+        <item name="android:actionBarItemBackground">@color/swatches_yellow_A700</item>
+        <item name="android:actionMenuTextColor">@color/pure_black</item>
+        <item name="android:actionMenuTextAppearance">@color/pure_black</item>
+        <item name="android:titleTextStyle">@color/swatches_yellow_A700</item>
         <item name="android:background">@color/swatches_yellow_A700</item>
         <item name="android:backgroundSplit">@color/swatches_yellow_A700</item>
+        <item name="android:icon">@android:color/transparent</item>
         <item name="android:backgroundStacked">@color/swatches_yellow_A700</item>
+        <item name="android:textColor">@color/pure_black</item>
+    </style>
+
+    <style name="ChillApp_titleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/pure_black</item>
+        <item name="android:actionMenuTextColor">@color/pure_black</item>
+        <item name="android:background">@color/swatches_yellow_A700</item>
     </style>
 
     <style name="ChillApp_ListView" parent="ChillApp">

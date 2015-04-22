@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.etienne.chillapp.R;
 
@@ -43,7 +44,7 @@ public class Suggestions extends Fragment {
     public static Suggestions newInstance(String message) {
         Suggestions fragment = new Suggestions();
         Bundle bundle = new Bundle(1);
-        bundle.putString(ARG_PARAM1, message);
+        bundle.putString("title", message);
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -64,8 +65,12 @@ public class Suggestions extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_suggestions, container, false);
+        String message = getArguments().getString(ARG_PARAM1);
+        View v = inflater.inflate(R.layout.fragment_suggestions, container, false);
+        //TextView messageTextView = (TextView)v.findViewById(R.id.textView);
+        //messageTextView.setText(message);
+
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

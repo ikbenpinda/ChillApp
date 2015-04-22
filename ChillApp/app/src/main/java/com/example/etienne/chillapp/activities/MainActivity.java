@@ -43,7 +43,9 @@ import com.facebook.FacebookSdk;
 import com.google.android.gms.nearby.Nearby;
 
 
-public class MainActivity extends FragmentActivity implements ActionBar.TabListener, Appointments.OnFragmentInteractionListener, Suggestions.OnFragmentInteractionListener{
+public class MainActivity extends FragmentActivity implements ActionBar.TabListener,
+        Appointments.OnFragmentInteractionListener, Suggestions.OnFragmentInteractionListener{
+
     MyPageAdapter pageAdapter;
     ViewPager pager;
     ActionBar actionbar;
@@ -89,6 +91,9 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
     }
 
+    /**
+     * Custom adapter for fragments.
+     */
     class MyPageAdapter extends FragmentPagerAdapter {
         private List<Fragment> fragments;
 
@@ -99,7 +104,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
         @Override
         public CharSequence getPageTitle(int position){
-            return getFragments().get(position).toString();
+            return getFragments().get(position).getArguments().get("title").toString();
         }
 
         @Override
@@ -133,14 +138,14 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     }
 
     /**
-     *
+     * Sets the tabs on the main menu.
      * @return
      */
     private List<Fragment> getFragments() {
         List<Fragment> fList = new ArrayList<Fragment>();
-        Fragment f1 = Appointments.newInstance("asdfghjkl");
-        Fragment f2 = Home.newInstance("qwertyuiop");
-        Fragment f3 = Suggestions.newInstance("zxcvbnm");
+        Fragment f1 = Appointments.newInstance("Afspraken");
+        Fragment f2 = Home.newInstance("Home");
+        Fragment f3 = Suggestions.newInstance("Suggesties");
         fList.add(f1);
         fList.add(f2);
         fList.add(f3);

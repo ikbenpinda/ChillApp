@@ -20,13 +20,13 @@ import com.example.etienne.chillapp.R;
  * create an instance of this fragment.
  */
 public class Home extends Fragment {
-        public static final String EXTRA_MESSAGE = "EXTRA_MESSAGE";
+        public static final String TITLE = "title";
 
         public static final Home newInstance(String message)
         {
             Home fragment = new Home();
             Bundle bdl = new Bundle(1);
-            bdl.putString(EXTRA_MESSAGE, message);
+            bdl.putString(TITLE, message);
             fragment.setArguments(bdl);
             return fragment;
         }
@@ -38,10 +38,10 @@ public class Home extends Fragment {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            String message = getArguments().getString(EXTRA_MESSAGE);
+            String message = getArguments().getString(TITLE);
             View v = inflater.inflate(R.layout.fragment_home, container, false);
-            TextView messageTextView = (TextView)v.findViewById(R.id.textview);
-            messageTextView.setText(message);
+            //TextView messageTextView = (TextView)v.findViewById(R.id.textView);
+            //messageTextView.setText(message);
 
             return v;
         }
