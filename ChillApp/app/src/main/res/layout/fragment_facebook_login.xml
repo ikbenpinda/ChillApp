@@ -7,4 +7,11 @@
     <TextView android:layout_width="match_parent" android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
 
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="216dp"
+        class="com.facebook.login.widget.LoginButton"
+        android:id="@+id/view"
+        android:layout_gravity="center" />
+
 </FrameLayout>

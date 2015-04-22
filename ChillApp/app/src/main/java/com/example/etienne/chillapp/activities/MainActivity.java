@@ -37,6 +37,7 @@ import android.widget.TextView;
 
 import com.example.etienne.chillapp.R;
 import com.example.etienne.chillapp.fragments.Appointments;
+import com.example.etienne.chillapp.fragments.FacebookLogin;
 import com.example.etienne.chillapp.fragments.Home;
 import com.example.etienne.chillapp.fragments.Suggestions;
 import com.facebook.FacebookSdk;
@@ -44,7 +45,7 @@ import com.google.android.gms.nearby.Nearby;
 
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener,
-        Appointments.OnFragmentInteractionListener, Suggestions.OnFragmentInteractionListener{
+        Appointments.OnFragmentInteractionListener, Suggestions.OnFragmentInteractionListener, FacebookLogin.OnFragmentInteractionListener{
 
     MyPageAdapter pageAdapter;
     ViewPager pager;
@@ -143,7 +144,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
      */
     private List<Fragment> getFragments() {
         List<Fragment> fList = new ArrayList<Fragment>();
-        Fragment f1 = Appointments.newInstance("Afspraken");
+        Fragment f1 = FacebookLogin.newInstance("Afspraken");
         Fragment f2 = Home.newInstance("Home");
         Fragment f3 = Suggestions.newInstance("Suggesties");
         fList.add(f1);
