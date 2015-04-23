@@ -12,7 +12,7 @@
     <!-- These styles are for individual views. Basic naming is "ChillApp_[viewname]". -->
     <style name="ChillApp_ActionBar" parent="android:Widget.ActionBar">
         <item name="android:windowBackground">@color/pure_black</item>
-        <item name="android:actionBarItemBackground">@color/swatches_yellow_A700</item>
+        <item name="android:actionBarItemBackground">@color/swatches_yellow_900</item>
         <item name="android:actionMenuTextColor">@color/pure_black</item>
         <item name="android:actionMenuTextAppearance">@color/pure_black</item>
         <item name="android:titleTextStyle">@color/swatches_yellow_A700</item>
