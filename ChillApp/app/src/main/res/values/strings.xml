@@ -20,4 +20,5 @@
     <string name="intro_textview_id_intro_two">Het enige wat jij hoeft te doen, is inloggen met Facebook. Zo kan de app dingen voor je zoeken die jij en je vrienden leuk vinden, zonder je steeds om bevestiging te hoeven vragen. \n Makkelijk toch?</string>
     <string name="main_home_header">Geen gezeur, geen gedoe! \n Gewoon afspreken, alles gaat vanzelf, je hoeft alleen maar op de knop te drukken!</string>
     <string name="main_home_suggestions">Ondertussen hebben we deze dingen al voor je bedacht! \n Misschien vindt je een van deze dingen iets!</string>
+    <string name="Set_cnct">Import Contact</string>
 </resources>

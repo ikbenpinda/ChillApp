@@ -15,13 +15,14 @@ import android.support.v4.view.ViewPager;
 
 import com.example.etienne.chillapp.R;
 import com.example.etienne.chillapp.fragments.Appointments;
+import com.example.etienne.chillapp.fragments.Contacts;
 import com.example.etienne.chillapp.fragments.Home;
 import com.example.etienne.chillapp.fragments.Suggestions;
 import com.facebook.FacebookSdk;
 
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener,
-        Appointments.OnFragmentInteractionListener, Suggestions.OnFragmentInteractionListener{
+        Appointments.OnFragmentInteractionListener, Contacts.OnFragmentInteractionListener{
 
     MyPageAdapter pageAdapter;
     ViewPager pager;
@@ -122,7 +123,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         List<Fragment> fList = new ArrayList<Fragment>();
         Fragment f1 = Appointments.newInstance("Afspraken");
         Fragment f2 = Home.newInstance("Home");
-        Fragment f3 = Suggestions.newInstance("Suggesties");
+        Fragment f3 = Contacts.newInstance("Contacts");
         fList.add(f1);
         fList.add(f2);
         fList.add(f3);
