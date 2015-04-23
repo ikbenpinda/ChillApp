@@ -8,7 +8,7 @@ import android.content.SharedPreferences;
  */
 public class UserPreferencesEditorHelper extends Activity{
 
-    public void setInitialUse(){
+    public void getInitialUse(){
         SharedPreferences preferences = getPreferences(0);
         preferences.getBoolean("FirstUse", true);
     }

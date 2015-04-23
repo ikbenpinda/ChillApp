@@ -1,26 +1,43 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.etienne.chillapp.fragments.Introduction_2">
+    tools:context="com.example.etienne.chillapp.fragments.Introduction_2"
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="Introductions, 2." />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/textView3"
-        android:layout_gravity="center" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/textView4"
+        android:text="@string/intro_textview_id_header"
+        android:id="@+id/intro_textview_header"
+        android:layout_gravity="center_horizontal|top" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="148dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/intro_textview_id_intro_two"
+        android:id="@+id/intro_textview_intro2"
+        android:layout_gravity="top|bottom|center"
+        android:gravity="bottom" />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:name="com.example.etienne.chillapp.fragments.FacebookLogin"
+        android:id="@+id/fragment2"
+        tools:layout="@layout/fragment_facebook_login"
+        android:layout_weight="0.90" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Log in om door te gaan"
+        android:id="@+id/intro_textview_footer"
         android:layout_gravity="center_horizontal|bottom" />
 
-</FrameLayout>
+</LinearLayout>

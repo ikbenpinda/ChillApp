@@ -12,9 +12,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.etienne.chillapp.R;
+import com.example.etienne.chillapp.fragments.FacebookLogin;
 import com.example.etienne.chillapp.fragments.Introduction_1;
 import com.example.etienne.chillapp.fragments.Introduction_2;
-import com.example.etienne.chillapp.fragments.Introduction_3;
 import com.example.etienne.chillapp.utilities.customFragmentPagerAdapter;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ import java.util.ArrayList;
  * Introduction pages for first time use of app.
  * @author Etienne
  */
-public class Introduction extends FragmentActivity implements Introduction_1.OnFragmentInteractionListener, Introduction_2.OnFragmentInteractionListener, Introduction_3.OnFragmentInteractionListener{
+public class Introduction extends FragmentActivity implements Introduction_1.OnFragmentInteractionListener, Introduction_2.OnFragmentInteractionListener, FacebookLogin.OnFragmentInteractionListener{
 
     customFragmentPagerAdapter adapter;
     ViewPager pager;
@@ -35,9 +35,8 @@ public class Introduction extends FragmentActivity implements Introduction_1.OnF
 
         // Add introduction panels.
         ArrayList<Fragment>fragments = new ArrayList<>();
-        fragments.add(Introduction_1.newInstance("hello", "world"));
-        fragments.add(Introduction_2.newInstance("hello", "world"));
-        fragments.add(Introduction_3.newInstance("hello", "world"));
+        fragments.add(Introduction_1.newInstance("intro1", "message"));
+        fragments.add(Introduction_2.newInstance("intro2", "message"));
         // Set adapter.
         adapter = new customFragmentPagerAdapter(getSupportFragmentManager(), fragments);
         pager = (ViewPager) findViewById(R.id.pager);

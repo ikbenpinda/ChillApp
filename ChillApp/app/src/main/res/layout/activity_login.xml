@@ -8,15 +8,14 @@
     android:weightSum="1"
     android:orientation="vertical">
 
-    <TextView android:text="@string/hello_world" android:layout_width="match_parent"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.21" />
-
-    <fragment
-        android:layout_width="344dp"
-        android:layout_height="427dp"
-        android:name="com.facebook.login.LoginFragment"
-        android:id="@+id/fb_fragment"
-        tools:layout="@layout/fragment_facebook_login" />
+        android:layout_weight="0.21"
+        android:id="@+id/login_title"
+        android:textColor="#FFF"
+        android:text="Text here."
+        android:enabled="true"
+        android:editable="true" />
 
 </LinearLayout>

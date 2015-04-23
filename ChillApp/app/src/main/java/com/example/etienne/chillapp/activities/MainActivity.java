@@ -1,51 +1,27 @@
 package com.example.etienne.chillapp.activities;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Vector;
+import java.util.*;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.PagerTabStrip;
-import android.support.v7.app.ActionBarActivity;
 import android.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.etienne.chillapp.R;
 import com.example.etienne.chillapp.fragments.Appointments;
-import com.example.etienne.chillapp.fragments.FacebookLogin;
 import com.example.etienne.chillapp.fragments.Home;
 import com.example.etienne.chillapp.fragments.Suggestions;
 import com.facebook.FacebookSdk;
-import com.google.android.gms.nearby.Nearby;
 
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener,
-        Appointments.OnFragmentInteractionListener, Suggestions.OnFragmentInteractionListener, FacebookLogin.OnFragmentInteractionListener{
+        Appointments.OnFragmentInteractionListener, Suggestions.OnFragmentInteractionListener{
 
     MyPageAdapter pageAdapter;
     ViewPager pager;
@@ -144,7 +120,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
      */
     private List<Fragment> getFragments() {
         List<Fragment> fList = new ArrayList<Fragment>();
-        Fragment f1 = FacebookLogin.newInstance("Afspraken");
+        Fragment f1 = Appointments.newInstance("Afspraken");
         Fragment f2 = Home.newInstance("Home");
         Fragment f3 = Suggestions.newInstance("Suggesties");
         fList.add(f1);
